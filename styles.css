@@ -70,3 +70,10 @@ body {
     font-size: 1.1em;
     margin-top: 10px;
   }
+
+  .quote {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    margin: 1.5em 0;
+  }
