@@ -1,0 +1,72 @@
+/* Typography and global styles */
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #fef6e4 0%, #fcefb4 100%);
+    color: #333;
+    margin: 40px;
+    line-height: 1.6;
+  }
+  
+  /* Headers */
+  h1, h2, h3 {
+    color: #2a2e45;
+    border-bottom: 3px dashed #ff9f1c;
+    padding-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Navigation / TOC */
+  nav {
+    background-color: #ffe3e3;
+    border: 2px dashed #ff595e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  nav h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #1982c4;
+  }
+  
+  nav ul {
+    list-style-type: "⭐ ";
+    padding-left: 20px;
+  }
+  
+  nav a {
+    color: #6a4c93;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    color: #ff595e;
+  }
+  
+  /* Sections */
+  section {
+    background-color: #f8edeb;
+    border-left: 6px solid #ffca3a;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  }
+  
+  /* Links and emphasis */
+  a {
+    color: #1982c4;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: #ff006e;
+  }
+  
+  p {
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
