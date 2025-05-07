@@ -70,6 +70,8 @@ body {
     font-size: 1.1em;
     margin-top: 10px;
     text-indent: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   .quote {
@@ -77,4 +79,6 @@ body {
     text-align: center;
     font-style: italic;
     margin: 1.5em 0;
+    margin-left: 4em;
+    margin-right: 4em;
   }
