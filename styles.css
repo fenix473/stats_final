@@ -82,3 +82,20 @@ body {
     margin-left: 4em;
     margin-right: 4em;
   }
+
+  ul {
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    margin: 20px;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  ul ul {
+    list-style-type: circle; /* Or "disc" or "square" if preferred */
+    margin-top: 5px;
+    padding-left: 20px;
+  }
