@@ -18,9 +18,9 @@
 <body>
 
   <h1>Social Justice Project: How is it to be a smoker in US?</h1>
-  <p><strong>Author:</strong> Libero Favi<br>
-     <strong>Course:</strong> Elementary Stats, Prof. Fitzpatrick<br>
-     <strong>Date:</strong> TBD</p>
+  <p><strong>Author:</strong> Libero Favi<br></p>
+  <p><strong>Course:</strong> Elementary Stats, Prof. Fitzpatrick<br></p>
+  <p><strong>Date:</strong> TBD</p>
 
   <nav>
     <h2>Table of Contents</h2>
@@ -116,7 +116,10 @@
 
   <section id="Analysis1">
     <h2>3.1 Population Overview</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    <p>Many official sources claim that smoking rates have been decreasing for decades in the US. CDC official estimate is 11.6% by the year of 2022. This number comes from the count of cigarette smoking now (CIGNOW_A) and if a person ever smoked more than 100 cigarettes (SMKEV_A). CDC’s estimate doesn't account for the e-cigarette smoking population in their estimate, lowering the overall population of nicotine based products consumers. Their survey includes ECIGNOW_A.</p>
+    <p>CIGNOW_A is a categorical variable, where surveyed answers question how often they smoke: (1) daily, (2) some day, (3) not at all, (7) refused, (9) don’t know. We filter as smokers people who answered 1 or 2.</p>
+    <p>SMKEV_A is another categorical variable, answering the question “Have you smoked at least 100 cigarettes in your ENTIRE LIFE?” with options: (1) Yes, (2) No. CDC in their estimate uses this variable, but we do not. We doubt there is a significant factor compared to smoking daily or some day from CIGNOW_A.</p>
+    <p>ECIGNOW_A is similar to CIGNOW_A asking how often a surveyed person smokes electronic cigarettes: (1) daily, (2) some day, (3) not at all, (7) refused, (9) don’t know. We filter as combined smokers people who answered 1 or 2. We are avoiding overlap as each sample must qualify only for one condition to be included.</p>
   </section>
 
   <section id="variables1">
