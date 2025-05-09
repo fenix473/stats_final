@@ -1,111 +1,123 @@
-/* Typography and global styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Nunito:wght@300;600&display=swap');
+
 body {
-    font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
-    background: radial-gradient(circle, #fef6e4 0%, #fcefb4 100%);
-    color: #333;
+    font-family: 'Nunito', sans-serif;
+    background: radial-gradient(circle at top left, #101820 0%, #1e1e1e 100%);
+    color: #00ffff;
     margin: 40px;
     line-height: 1.6;
-  }
-  
-  /* Headers */
-  h1, h2, h3 {
-    color: #2a2e45;
-    border-bottom: 3px dashed #ff9f1c;
-    padding-bottom: 5px;
-    border-radius: 5px;
-  }
-  
-  /* Navigation / TOC */
-  nav {
-    background-color: #ffe3e3;
-    border: 2px dashed #ff595e;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  nav h2 {
-    font-size: 1.5em;
-    margin-top: 0;
-    color: #1982c4;
-  }
-  
-  nav ul {
-    list-style-type: "⭐ ";
-    padding-left: 20px;
-  }
-  
-  nav a {
-    color: #6a4c93;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-    color: #ff595e;
-  }
-  
-  /* Sections */
-  section {
-    background-color: #f8edeb;
-    border-left: 6px solid #ffca3a;
-    margin-top: 40px;
+}
+
+/* Headers */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff00ff;
+    border-bottom: 2px solid #00ffff;
+    padding-bottom: 6px;
+    margin-top: 1em;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+/* Navigation / TOC */
+nav {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid #00ffff;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-  }
-  
-  /* Links and emphasis */
-  a {
-    color: #1982c4;
+    box-shadow: 0 0 15px #00ffff55;
+}
+
+nav h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4em;
+    margin-top: 0;
+    color: #ff00ff;
+}
+
+nav ul {
+    list-style-type: "✦ ";
+    padding-left: 20px;
+    color: #ffffff;
+}
+
+nav a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #ff00ff;
+}
+
+/* Sections */
+section {
+    background-color: #1a1a1a;
+    border-left: 4px solid #00ffff;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffff22;
+}
+
+/* Links and emphasis */
+a {
+    color: #00ffff;
     font-weight: 500;
-  }
-  
-  a:hover {
-    color: #ff006e;
-  }
-  
-  p {
-    font-size: 1.1em;
+}
+
+a:hover {
+    color: #ff00ff;
+}
+
+p {
+    font-size: 1.15em;
     margin-top: 10px;
     text-indent: 2em;
     margin-left: 1em;
     margin-right: 1em;
-  }
+    color: #c0c0c0;
+}
 
-  .quote {
+.quote {
     display: block;
     text-align: center;
     font-style: italic;
-    margin: 1.5em 0;
-    margin-left: 4em;
-    margin-right: 4em;
-  }
+    margin: 1.5em auto;
+    color: #ff00ff;
+    max-width: 700px;
+    text-shadow: 0 0 8px #ff00ff;
+}
 
-  ul {
-    font-family: Arial, sans-serif;
+ul {
     font-size: 1.1em;
     margin: 20px;
     padding-left: 20px;
-  }
+    color: #aefeff;
+}
 
-  li {
+li {
     margin-bottom: 10px;
-  }
+}
 
-  ul ul {
-    list-style-type: circle; /* Or "disc" or "square" if preferred */
+ul ul {
+    list-style-type: square;
     margin-top: 5px;
     padding-left: 20px;
-  }
+}
 
-  img {
-  max-width: 100%;
-  height: auto;
-  }
+img {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00ffff33;
+}
 
-  svg {
-  fill: #444;
-  stroke-width: 1.5;
-  }
+svg {
+    fill: #00ffff;
+    stroke-width: 1.5;
+}
