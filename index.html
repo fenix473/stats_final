@@ -152,15 +152,37 @@
 
   <section id="findings1">
     <h2>3.1.3 Description of Findings</h2>
-    <p>We found SSE evidence against the null, meaning we can confirm the continuation of decline in cigarette smoking rates to decrease from 2022 to 2033, from 11.6% to 10.6% respectively. More than 100 people in a 1000 identify themselves as active smokers in the US, ranging from daily smoking to some day.</p>
+    <p>CLT is well met, with our sample size of 25000. We found SSE evidence against the null, meaning we can confirm the continuation of decline in cigarette smoking rates to decrease from 2022 to 2033, from 11.6% to 10.6% respectively. More than 100 people in a 1000 identify themselves as active smokers in the US, ranging from daily smoking to some day.</p>
     <p>We pushed our investigation further by trying to estimate the overall population of nicotine smokers in the US. We had merged cigarettes and e-cigarettes smokers together and built a CI. We are 99% sure that the population consuming nicotine based products is between 13.73 and 14.78 percent. This result had raised suspicion, as it contradicts the belief that e-cigarettes are widely replacing traditional cigarettes. It is better shown on this chart:</p>
     <p><img src="images/pie1.png" /></p>
     <p>We can see that based on this data describing the chart, vaping is almost 3 times less common than traditional cigarettes. This makes us question whether this is true or not, it may be the systematic error in the survey or less self-perceivable habit, resulting in interfering with the CDC data.</p>
   </section>
 
   <section id="Analysis2">
-    <h2>3.2 Clinical Image</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    <h2>3.2 CHI-Square analysis</h2>
+    <p>Given the large dimension of the dataset, we perform a CHI square analysis to determine other potential variables of interest. Test is entirely executed through R and all the details can be found in the supplement Rmd file. Without proper experience in coding chi square analysis, we test each found variable individually. Also, only variables that meet CLT restriction are taken into account.</p>
+    <p>We found many variables of our interest that can tell us more, listed in decreasing p-value order. Many variables are excluded for various reasons, such as being support variable for other variables, repetition of already listed variable and etc:</p>
+    <ul>
+      <li>COPDEV_A — Chronic obstructive pulmonary disease.</li>
+      <li>LEGMSTAT_A — Legal Marital Status.</li>
+      <li>ARTHEV_A — Ever had arthritis.</li>
+      <li>HYPEV_A — Ever had hypertension.</li>
+      <li>SOCWRKLIM_A — Work limited to health problems.</li>
+      <li>AFVET_A — Ever active military duty.</li>
+      <li>CHLEV_A — Ever had high cholesterol.</li>
+      <li>HISP_A — Hispanic Ethnicity. </li>
+      <li>DEPFREQ_A — How often depressed.</li>
+      <li>DEPEV_A — Ever had depression.</li>
+      <li>MIEV_A — Ever had a heart attack.</li>
+      <li>DISAB3_A — The Washington Group Short Set Composite Disability Indicator.</li>
+      <li>LSTATIS4_A — Life satisfaction.</li>
+      <li>URBRRL — Rural Index.</li>
+      <li>PHQ2SCREEN_A — PHQ-2 Screening Result.</li>
+      <li>FDSLAST_A — Frequency of food didn't last (had not enough food and unable to buy more).</li>
+      <li>CENEV_A — Ever told you have cancer.</li>
+      <li>STREV_A — Ever had a stroke.</li>
+    </ul>
+    <p>We identify only 5 variables as of the most interest to us: marital status, active duty veterans, hispanic origin, disability, and having not enough food. We will compare these variables manually to non-smoking group using null hypothesis to determine whether they prevail in the US smoking population.</p>
   </section>
 
   <section id="variables2">
