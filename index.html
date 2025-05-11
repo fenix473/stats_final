@@ -187,7 +187,40 @@
 
   <section id="variables2">
     <h2>3.2.1 Applied Statistics</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    <p>We separate data into 2 subset, smokers and non-smokers. We accept as a smoker only people who answered SMKNOW_A (smoking now) question with 1 or 2, smoking everyday or some days. Non-smokers are defined as people who did not smoke more than 100 cigarettes ever (SMKEV_A = 2). We are dropping previously used variables of people who ever smoked more than 100 cigarettes and focusing only on current smokers. By doing so we obtained 2 datasets, chi_smokers (n=3135) and chi_non_smokers (n=18111). CLT is met for any analysis we would need to perform.</p>
+    <p>Using the formula we used before, described in 3.1.2, we had streamlined the process and used the following code to analyze the variables. Each implementation can be found in the Rmd file. </p>
+    <figure class="code-chunk">
+    <figcaption><strong>Code Chunk: Two-Proportion Z-Test (Smokers vs Non-Smokers)</strong></figcaption>
+    <pre><code>
+      # Filter both populations in terms of analyzed variables
+      dummy_group1 &lt;- total_smoking_population %&gt;%
+        filter(variable %in% c(1))
+
+      # Calculate the p value for the statistic of that variable
+      p_dummy_group1 &lt;-  nrow(dummy_group1) / nrow(chi_smoker)
+
+      # Repeat for group two
+      dummy_group2 &lt;- chi_non_smoker %&gt;%
+        filter(variable %in% c(1))
+      p_dummy_group2 &lt;-  nrow(dummy_group2) / nrow(chi_non_smoker)
+
+      # Find SE
+      SE &lt;- sqrt(p_dummy_group1 * (1 - p_dummy_group1) / nrow(chi_smoker) + 
+                p_dummy_group2 * (1 - p_dummy_group2) / nrow(chi_non_smoker))
+
+      # Compute z value
+      z &lt;- (p_dummy_group1 - p_dummy_group2) / SE
+
+      # Plug into the theoretical distribution (two-tailed)
+      p_smk &lt;- 2 * dnorm(z)
+      </code></pre>
+    </figure>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
   </section>
 
   <section id="visualization2">
