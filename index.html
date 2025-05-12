@@ -32,17 +32,17 @@
       <li><a href="#bias">2.3 Bias</a></li>
       <li><a href="#lurking-variables">2.4 Lurking Variables</a></li>
       <li><a href="#Analysis1">3.1 Population Overview</a></li>
-      <li><a href="#variables1">3.1.1 Applied Statistics</a></li>
+      <li><a href="#variables1">3.1.1 Methodology</a></li>
       <li><a href="#visualization1">3.1.2 Theoretical Statistics</a></li>
       <li><a href="#findings1">3.1.3 Description of Findings</a></li>
-      <li><a href="#Analysis2">3.2 Clinical Image</a></li>
-      <li><a href="#variables2">3.2.1 Applied Statistics</a></li>
+      <li><a href="#Analysis2">3.2 CHI-Square Analysis</a></li>
+      <li><a href="#variables2">3.2.1 Methodology</a></li>
       <li><a href="#visualization2">3.2.2 Theoretical Statistics</a></li>
       <li><a href="#findings2">3.2.3 Description of Findings</a></li>
-      <li><a href="#Analysis3">3.3 Happiness level</a></li>
+      <!-- <li><a href="#Analysis3">3.3 Happiness level</a></li>
       <li><a href="#variables3">3.3.1 Applied Statistics</a></li>
       <li><a href="#visualization3">3.3.2 Theoretical Statistics</a></li>
-      <li><a href="#findings3">3.3.3 Description of Findings</a></li>
+      <li><a href="#findings3">3.3.3 Description of Findings</a></li> -->
       <li><a href="#social-justice-discussion">4.1 Social Justice Discussion</a></li>
       <li><a href="#limitations">4.2 Limitations</a></li>
       <li><a href="#future-research">4.3 Future Recommendations</a></li>
@@ -123,7 +123,7 @@
   </section>
 
   <section id="variables1">
-    <h2>3.1.1 Applied Statistics</h2>
+    <h2>3.1.1 Methodology</h2>
     <p>First we want to test whether the trend of cigarette smoking population continues with decline using the Hypothesis Test (HT) with alpha of 0.01.</p>
     <p>Our Null Hypothesis is provided by CDC and equals 11.6% in 2022. To align with the trend, cigarette smoking proportion must be less than 11.6% in 2023. Alternative hypothesis is that cigarette smoking proportion had neither increased or stayed the same.</p>
     <p>To conduct our hypothesis we need to compute Standard Error (SE) for a single proportion. Having SE we can compute Test statistics, comparing how much our calculated proportion deviates from the one provided by null hypothesis, effectively obtaining z statistics. Afterwards we will plug computed z statistics into the normal distribution curve to obtain p-value and determine whether our results are statistically significant. </p>
@@ -186,7 +186,7 @@
   </section>
 
   <section id="variables2">
-    <h2>3.2.1 Applied Statistics</h2>
+    <h2>3.2.1 Methodology</h2>
     <p>We separate data into 2 subset, smokers and non-smokers. We accept as a smoker only people who answered SMKNOW_A (smoking now) question with 1 or 2, smoking everyday or some days. Non-smokers are defined as people who did not smoke more than 100 cigarettes ever (SMKEV_A = 2). We are dropping previously used variables of people who ever smoked more than 100 cigarettes and focusing only on current smokers. By doing so we obtained 2 datasets, chi_smokers (n=3135) and chi_non_smokers (n=18111). CLT is met for any analysis we would need to perform.</p>
     <p>Using the formula we used before, described in 3.1.2, we had streamlined the process and used the following code to analyze the variables. Each implementation can be found in the Rmd file. </p>
     <figure class="code-chunk">
@@ -380,7 +380,7 @@
     <p>The most concerning trend we can see in less protected layers of population. We have found that between 7.7 to 9.7 percent of all smokers are people who report frequent lack of enough food and being unable to buy more for financial reasons. We view this as a strong indicator of poverty. Furthermore, we identified disabled people as a very significant proportion of the smoking population. Between 14.8 to 17.4 percent of people who were identified as disabled on the The Washington Group Short Set Composite Disability Indicator as disabled are smoking cigarettes.</p>
   </section>
 
-  <section id="Analysis3">
+  <!-- <section id="Analysis3">
     <h2>3.3 Happiness Level</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
   </section>
@@ -398,7 +398,7 @@
   <section id="findings3">
     <h2>3.3.3 Description of Findings</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-  </section>
+  </section> -->
 
   <section id="social-justice-discussion">
     <h2>4.1 Social Justice Discussion</h2>
