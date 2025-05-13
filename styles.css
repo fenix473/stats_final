@@ -1,113 +1,117 @@
 /* === Import Fonts === */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700&family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Fira+Sans:wght@400;600&display=swap');
 
 /* === Global Layout === */
 body {
-    font-family: 'Barlow', sans-serif;
-    background: #f8f9fa;
-    color: #1c1c1c;
+    font-family: 'Fira Sans', sans-serif;
+    background: #fcfaf5;
+    color: #222;
     margin: 0 auto;
-    max-width: 960px;
-    padding: 50px 30px;
-    line-height: 1.8;
-    font-size: 18px;
+    max-width: 900px;
+    padding: 40px 25px;
+    line-height: 1.9;
+    font-size: 17px;
 }
 
 /* === Typography === */
 h1, h2, h3 {
-    font-family: 'Anton', sans-serif;
-    color: #000;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #e63946;
-    padding-bottom: 6px;
-    margin-top: 2.5em;
-    margin-bottom: 0.7em;
+    font-family: 'Merriweather', serif;
+    color: #333;
+    font-weight: 700;
+    margin-top: 2.4em;
+    margin-bottom: 0.8em;
+    line-height: 1.3;
 }
 
 h1 {
     font-size: 2.4em;
+    border-left: 8px solid #fcbf49;
+    padding-left: 12px;
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 1.9em;
+    border-left: 6px solid #fcbf49;
+    padding-left: 10px;
 }
 
 h3 {
     font-size: 1.5em;
+    border-left: 4px solid #fcbf49;
+    padding-left: 8px;
 }
 
 p {
-    margin: 1.6em auto;
-    max-width: 800px;
-    text-indent: 0;
+    margin: 1.4em auto;
+    max-width: 750px;
+    text-indent: 2em;
     color: #333;
 }
 
 ul, ol {
     margin: 1.5em 2em;
-    padding-left: 1.2em;
+    padding-left: 1.5em;
+    color: #333;
 }
 
 li {
-    margin-bottom: 0.8em;
+    margin-bottom: 0.6em;
 }
 
 /* === Navigation === */
 nav {
-    background-color: #fff;
-    border-left: 6px solid #457b9d;
-    padding: 28px;
-    border-radius: 8px;
-    margin-bottom: 2.5em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    background-color: #fffdf5;
+    border-left: 6px solid #fcbf49;
+    padding: 24px;
+    border-radius: 6px;
+    margin-bottom: 2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
 }
 
 nav h2 {
-    font-family: 'Anton', sans-serif;
-    font-size: 1.5em;
-    color: #1d3557;
-    margin: 0 0 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 1.4em;
+    color: #222;
+    margin-bottom: 10px;
 }
 
 nav ul {
-    padding-left: 1.5em;
+    padding-left: 20px;
 }
 
 nav a {
-    color: #1d3557;
+    color: #264653;
     text-decoration: none;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #e63946;
+    color: #f77f00;
     text-decoration: underline;
 }
 
 /* === Sections === */
 section {
-    background-color: #ffffff;
-    border-left: 6px solid #000000;
+    background-color: #fffefc;
+    border-left: 6px solid #e9c46a;
     margin-top: 48px;
-    padding: 36px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 /* === Quotes === */
 .quote {
     font-style: italic;
-    font-size: 1.2em;
-    color: #222;
+    font-size: 1.15em;
+    color: #444;
     padding: 1.6em 2em;
-    margin: 3em auto;
-    border-left: 6px solid #e63946;
-    background: #f1f1f1;
+    margin: 2.5em auto;
+    border-left: 5px solid #fcbf49;
+    background: #fffaf1;
     line-height: 2;
     text-align: center;
-    max-width: 720px;
+    max-width: 700px;
     width: 90%;
     word-wrap: break-word;
     border-radius: 4px;
@@ -115,11 +119,9 @@ section {
 
 .citation {
     display: block;
-    margin-top: 0.6em;
+    margin-top: 0.5em;
     font-size: 0.9em;
-    color: #6c757d;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    color: #888;
 }
 
 /* === Images & SVGs === */
@@ -129,15 +131,14 @@ img, svg {
     height: auto;
     margin: 2em auto;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background: none;
 }
 
 /* === Code Blocks === */
 .code-chunk {
-    background-color: #0a0a0a;
-    color: #f8f8f2;
-    border-left: 4px solid #e63946;
+    background-color: #f7f7f2;
+    border-left: 4px solid #264653;
     padding: 1.5em;
     margin: 2.5em auto;
     border-radius: 4px;
@@ -146,17 +147,17 @@ img, svg {
     line-height: 1.6;
     max-width: 95%;
     overflow-x: auto;
+    color: #2e2e2e;
 }
 
 .code-chunk figcaption {
-    background-color: #1d3557;
+    background-color: #264653;
     color: #fff;
     padding: 0.5em 1em;
     font-size: 0.95em;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
 .code-chunk code {
@@ -171,7 +172,7 @@ img, svg {
         padding: 20px 15px;
     }
     h1, h2, h3 {
-        text-align: center;
+        text-align: left;
     }
     nav, section {
         padding: 20px;
@@ -186,3 +187,4 @@ img, svg {
         padding: 0 0.5em;
     }
 }
+
