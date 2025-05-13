@@ -160,8 +160,8 @@
 
   <section id="Analysis2">
     <h2>3.2 CHI-Square analysis</h2>
-    <p>Given the large dimension of the dataset, we perform a CHI square analysis to determine other potential variables of interest. Test is entirely executed through R and all the details can be found in the supplement Rmd file. Without proper experience in coding chi square analysis, we test each found variable individually. Also, only variables that meet CLT restriction are taken into account.</p>
-    <p>We found many variables of our interest that can tell us more, listed in decreasing p-value order. Many variables are excluded for various reasons, such as being support variable for other variables, repetition of already listed variable and etc:</p>
+    <p>Given the large dimension of the dataset, we constrain our analysis by determining other potential variables of interest. The test on how we obtained those variables is entirely executed through R and all the details can be found in the supplement Rmd file. Given uncertainty in our method of finding this variable, it is fair to assume they’ve been eyeballed. Meaning there might be more variables we missed. Also, only variables that meet CLT restriction are taken into account.</p>
+    <p>We identified many variables of our interest that can tell us more, listed in decreasing statistical significance order. Many variables are excluded for various reasons, such as being support variable for other variables, repetition of already listed variable and etc:</p>
     <ul>
       <li>COPDEV_A — Chronic obstructive pulmonary disease.</li>
       <li>LEGMSTAT_A — Legal Marital Status.</li>
@@ -182,40 +182,53 @@
       <li>CENEV_A — Ever told you have cancer.</li>
       <li>STREV_A — Ever had a stroke.</li>
     </ul>
-    <p>We identify only 5 variables as of the most interest to us: marital status, active duty veterans, hispanic origin, disability, and having not enough food. We will compare these variables manually to non-smoking group using null hypothesis to determine whether they prevail in the US smoking population.</p>
+    <p>We rule out 5 variables of the most interest to us: marital status, active duty veterans, hispanic origin, disability, and having not enough food. We will manually do hypothesis test for those variables and then build CI for these groups to determine their proportion to the US smoking population.</p>
   </section>
 
   <section id="variables2">
     <h2>3.2.1 Methodology</h2>
-    <p>We separate data into 2 subset, smokers and non-smokers. We accept as a smoker only people who answered SMKNOW_A (smoking now) question with 1 or 2, smoking everyday or some days. Non-smokers are defined as people who did not smoke more than 100 cigarettes ever (SMKEV_A = 2). We are dropping previously used variables of people who ever smoked more than 100 cigarettes and focusing only on current smokers. By doing so we obtained 2 datasets, chi_smokers (n=3135) and chi_non_smokers (n=18111). CLT is met for any analysis we would need to perform.</p>
-    <p>Using the formula we used before, described in 3.1.2, we had streamlined the process and used the following code to analyze the variables. Each implementation can be found in the Rmd file. </p>
+    <p>We separate data into 2 subset, smokers and non-smokers. We accept as a smoker only people who answered SMKNOW_A (smoking now) question with 1 or 2, smoking everyday or some days. Non-smokers are defined as people who did not smoke more than 100 cigarettes ever (SMKEV_A = 2). We are dropping previously used variables of people who ever smoked more than 100 cigarettes and focusing only on current smokers. By doing so we obtained 2 datasets, chi_smokers (n=3135) and chi_non_smokers (n=18111). CLT is met for any analysis we would need to perform. We will examine formulas on examle of disabled group.</p>
+    <p>Disabled:</p>
+    <p>H<sub>0</sub>: P<sub>SmokingDisabled</sub> = P<sub>NSmokingDisabled</sub></p>
+    <p>H<sub>a</sub>: P<sub>SmokingDisabled</sub> ≠ P<sub>NSmokingDisabled</sub></p>
+    <p><img src="images/Pool2.svg"/></p>
+    <p><img src="images/SE2Accurate.svg"/></p>
+    <p><img src="images/z2.svg"/></p>
+    <p>Estimate p-value using normal distriburtion and calculated z, we obtain p-value of 1.676185e-40. We reject the null, smoking is disproportional in disabled group.</p>
+    <p>We had streamlined the process and used the following code to analyze the variables. Each separate implementation can be found in the Rmd file. </p>
+    
     <figure class="code-chunk">
-    <figcaption><strong>Code Chunk: Two-Proportion Z-Test (Smokers vs Non-Smokers)</strong></figcaption>
-    <pre><code>
-      # Filter both populations in terms of analyzed variables
-      dummy_group1 &lt;- total_smoking_population %&gt;%
-        filter(variable %in% c(1))
+      <figcaption><strong>Code Chunk: Two-Proportion Z-Test (FDSLAST_A — Smokers vs Non-Smokers)</strong></figcaption>
+      <pre><code>
+        # Filter individuals who reported FDSLAST_A == 1 in both groups
+        dummy_group1 &lt;- chi_smoker %&gt;%
+          filter(FDSLAST_A %in% c(1))
+        dummy_group2 &lt;- chi_non_smoker %&gt;%
+          filter(FDSLAST_A %in% c(1))
 
-      # Calculate the p value for the statistic of that variable
-      p_dummy_group1 &lt;-  nrow(dummy_group1) / nrow(chi_smoker)
+        # Calculate sample proportions
+        p_dummy_group1 &lt;- nrow(dummy_group1) / nrow(chi_smoker)
+        p_dummy_group2 &lt;- nrow(dummy_group2) / nrow(chi_non_smoker)
 
-      # Repeat for group two
-      dummy_group2 &lt;- chi_non_smoker %&gt;%
-        filter(variable %in% c(1))
-      p_dummy_group2 &lt;-  nrow(dummy_group2) / nrow(chi_non_smoker)
+        # Get counts and group sizes
+        x1 &lt;- nrow(dummy_group1)
+        x2 &lt;- nrow(dummy_group2)
+        n1 &lt;- nrow(chi_smoker)
+        n2 &lt;- nrow(chi_non_smoker)
 
-      # Find SE
-      SE &lt;- sqrt(p_dummy_group1 * (1 - p_dummy_group1) / nrow(chi_smoker) + 
-                p_dummy_group2 * (1 - p_dummy_group2) / nrow(chi_non_smoker))
+        # Compute pooled proportion
+        p_pool &lt;- (x1 + x2) / (n1 + n2)
 
-      # Compute z value
-      z &lt;- (p_dummy_group1 - p_dummy_group2) / SE
+        # Calculate standard error using pooled proportion
+        SE &lt;- sqrt(p_pool * (1 - p_pool) * (1 / n1 + 1 / n2))
 
-      # Plug into the theoretical distribution (two-tailed)
-      p_smk &lt;- 2 * dnorm(z)
+        # Calculate z-statistic
+        z &lt;- (p_dummy_group1 - p_dummy_group2) / SE
+
+        # Calculate two-tailed p-value from standard normal distribution
+        p_smk &lt;- 2 * pnorm(-abs(z))
       </code></pre>
     </figure>
-
     <p></p>
     <p></p>
     <p></p>
@@ -235,9 +248,6 @@
     <p>Hispanic:</p>
     <p>H<sub>0</sub>: P<sub>SmokingHispanic</sub> = P<sub>NSmokingHisapnic</sub></p>
     <p>H<sub>a</sub>: P<sub>SmokingHispanic</sub> ≠ P<sub>NSmokingHispanic</sub></p>
-    <p>Disabled:</p>
-    <p>H<sub>0</sub>: P<sub>SmokingDisabled</sub> = P<sub>NSmokingDisabled</sub></p>
-    <p>H<sub>a</sub>: P<sub>SmokingDisabled</sub> ≠ P<sub>NSmokingDisabled</sub></p>
     <p>Food Lasting:</p>
     <p>H<sub>0</sub>: P<sub>SmokingFoodLast</sub> = P<sub>NSmokingFoodLast</sub></p>
     <p>H<sub>a</sub>: P<sub>SmokingFoodLast</sub> ≠ P<sub>NSmokingFoodLast</sub></p>
