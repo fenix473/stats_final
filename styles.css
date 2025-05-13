@@ -1,5 +1,7 @@
+/* === Import Fonts === */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@300;500;700&display=swap');
 
+/* === Global Layout === */
 body {
     font-family: 'Nunito', sans-serif;
     background: #fdf6ec url('https://www.transparenttextures.com/patterns/paper-fibers.png');
@@ -10,7 +12,7 @@ body {
     line-height: 1.8;
 }
 
-/* Headings */
+/* === Typography === */
 h1, h2, h3 {
     font-family: 'Fredoka One', cursive;
     color: #ff6f61;
@@ -21,7 +23,32 @@ h1, h2, h3 {
     text-align: left;
 }
 
-/* Navigation */
+p {
+    font-size: 1.1em;
+    margin: 1.2em auto;
+    color: #444;
+    text-indent: 1.5em;
+    max-width: 800px;
+}
+
+ul {
+    font-size: 1.1em;
+    margin: 1.5em 2em;
+    padding-left: 1.5em;
+    color: #444;
+}
+
+li {
+    margin-bottom: 0.6em;
+}
+
+ul ul {
+    list-style-type: circle;
+    margin-top: 0.3em;
+    padding-left: 1.5em;
+}
+
+/* === Navigation === */
 nav {
     background-color: #fff5f2;
     border: 2px dashed #ffc145;
@@ -53,7 +80,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Sections */
+/* === Sections === */
 section {
     background-color: #fffdf7;
     border-left: 6px solid #f8a5c2;
@@ -63,16 +90,7 @@ section {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Paragraphs */
-p {
-    font-size: 1.1em;
-    margin: 1.2em auto;
-    color: #444;
-    text-indent: 1.5em;
-    max-width: 800px;
-}
-
-/* Quotes */
+/* === Quotes === */
 .quote {
     font-style: italic;
     font-size: 1.1em;
@@ -90,25 +108,15 @@ p {
     width: 90%;
 }
 
-/* Lists */
-ul {
-    font-size: 1.1em;
-    margin: 1.5em 2em;
-    padding-left: 1.5em;
+.citation {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.95em;
+    color: #a084ca;
 }
 
-li {
-    margin-bottom: 0.6em;
-}
-
-ul ul {
-    list-style-type: circle;
-    margin-top: 0.3em;
-    padding-left: 1.5em;
-}
-
-/* Images */
-img {
+/* === Images & SVGs === */
+img, svg {
     display: block;
     max-width: 90%;
     height: auto;
@@ -117,16 +125,7 @@ img {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* SVGs */
-svg {
-    display: block;
-    margin: 1.5em auto;
-    fill: #444;
-    stroke-width: 1.5;
-    max-width: 100%;
-}
-
-/* Code Chunks */
+/* === Code Blocks === */
 .code-chunk {
     background-color: #f4f4f4;
     border: 1px solid #ccc;
@@ -152,4 +151,25 @@ svg {
     display: block;
     white-space: pre;
     color: #333;
+}
+
+/* === Responsive Enhancements === */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    h1, h2, h3 {
+        text-align: center;
+    }
+    nav, section {
+        padding: 20px 15px;
+    }
+    .quote {
+        padding: 1em;
+        font-size: 1em;
+    }
+    p, ul, .code-chunk {
+        font-size: 1em;
+        padding: 0 1em;
+    }
 }
