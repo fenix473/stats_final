@@ -75,14 +75,19 @@ p {
 /* Quotes */
 .quote {
     font-style: italic;
-    text-align: center;
-    color: #a084ca;
+    font-size: 1.1em;
+    color: #5c4b87;
+    background: #f3eaff;
+    padding: 1.2em 1.8em;
     margin: 2em auto;
-    padding: 1em;
-    border-left: 4px solid #d8b4e2;
-    background: #faf3fc;
-    border-radius: 8px;
+    border-left: 4px solid #c3aeea;
+    border-radius: 10px;
+    line-height: 1.6;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    word-wrap: break-word;
     max-width: 700px;
+    width: 90%;
 }
 
 /* Lists */
