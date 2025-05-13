@@ -108,13 +108,13 @@ section {
     padding: 1.6em 2em;
     margin: 2.5em auto;
     border-left: 5px solid #fcbf49;
-    background: #fffaf1;
+    background: none;
     line-height: 2;
     text-align: center;
     max-width: 700px;
     width: 90%;
     word-wrap: break-word;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .citation {
@@ -130,8 +130,8 @@ img, svg {
     max-width: 100%;
     height: auto;
     margin: 2em auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    box-shadow: none;
     background: none;
 }
 
