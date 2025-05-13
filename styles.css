@@ -95,17 +95,18 @@ section {
     font-style: italic;
     font-size: 1.1em;
     color: #5c4b87;
-    background: #f3eaff;
-    padding: 1.2em 1.8em;
+    background: none;
+    padding: 1.4em 2em;
     margin: 2em auto;
     border-left: 4px solid #c3aeea;
     border-radius: 10px;
-    line-height: 1.6;
+    line-height: 1.9;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
     word-wrap: break-word;
     max-width: 700px;
     width: 90%;
+    white-space: normal;
 }
 
 .citation {
@@ -122,7 +123,8 @@ img, svg {
     height: auto;
     margin: 2em auto;
     border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    background: none;
 }
 
 /* === Code Blocks === */
@@ -165,8 +167,9 @@ img, svg {
         padding: 20px 15px;
     }
     .quote {
-        padding: 1em;
+        padding: 1.2em;
         font-size: 1em;
+        line-height: 1.8;
     }
     p, ul, .code-chunk {
         font-size: 1em;
