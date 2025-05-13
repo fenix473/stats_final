@@ -196,15 +196,14 @@
     <p><img src="images/z2.svg"/></p>
     <p>Estimate p-value using normal distriburtion and calculated z, we obtain p-value of 1.676185e-40. We reject the null, smoking is disproportional in disabled group.</p>
     <p>We had streamlined the process and used the following code to analyze the variables. Each separate implementation can be found in the Rmd file. </p>
-    
     <figure class="code-chunk">
-      <figcaption><strong>Code Chunk: Two-Proportion Z-Test (FDSLAST_A — Smokers vs Non-Smokers)</strong></figcaption>
+      <figcaption><strong>Code Chunk: Two-Proportion Hypothesis Test (DISAB3_A — Smokers vs Non-Smokers)</strong></figcaption>
       <pre><code>
         # Filter individuals who reported FDSLAST_A == 1 in both groups
         dummy_group1 &lt;- chi_smoker %&gt;%
-          filter(FDSLAST_A %in% c(1))
+          filter(DISAB3_A %in% c(1))
         dummy_group2 &lt;- chi_non_smoker %&gt;%
-          filter(FDSLAST_A %in% c(1))
+          filter(DISAB3_A %in% c(1))
 
         # Calculate sample proportions
         p_dummy_group1 &lt;- nrow(dummy_group1) / nrow(chi_smoker)
@@ -229,91 +228,14 @@
         p_smk &lt;- 2 * pnorm(-abs(z))
       </code></pre>
     </figure>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-  </section>
+    <p>CI were estimated with code below, precisely copying the process showed in section 3.1.2.</p>
 
-  <section id="visualization2">
-    <h2>3.2.2 Theoretical Statistics</h2>
-    <p>Hypothesis were the following:</p>
-    <p>Divorce:</p>
-    <p>H<sub>0</sub>: P<sub>SmokingDivorce</sub> = P<sub>NSmokingDivroce</sub></p>
-    <p>H<sub>a</sub>: P<sub>SmokingDivorce</sub> ≠ P<sub>NSmokingDivroce</sub></p>
-    <p>Veterans:</p>
-    <p>H<sub>0</sub>: P<sub>SmokingVeterans</sub> = P<sub>NSmokingVeterans</sub></p>
-    <p>H<sub>a</sub>: P<sub>SmokingVeterans</sub> ≠ P<sub>NSmokingVeterans</sub></p>
-    <p>Hispanic:</p>
-    <p>H<sub>0</sub>: P<sub>SmokingHispanic</sub> = P<sub>NSmokingHisapnic</sub></p>
-    <p>H<sub>a</sub>: P<sub>SmokingHispanic</sub> ≠ P<sub>NSmokingHispanic</sub></p>
-    <p>Food Lasting:</p>
-    <p>H<sub>0</sub>: P<sub>SmokingFoodLast</sub> = P<sub>NSmokingFoodLast</sub></p>
-    <p>H<sub>a</sub>: P<sub>SmokingFoodLast</sub> ≠ P<sub>NSmokingFoodLast</sub></p>
-    <p> Results of our analysis are provided in the table below:</p>
-    <table border="1" cellspacing="0" cellpadding="8">
-      <caption><strong>Comparison of Proportions Between Smokers and Non-Smokers</strong></caption>
-      <thead>
-        <tr>
-          <th>Group</th>
-          <th>p̂ (Smokers)</th>
-          <th>p̂ (Non-Smokers)</th>
-          <th>Standard Error (SE)</th>
-          <th>Z-Score</th>
-          <th>p-value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Divorced</td>
-          <td>33.2%</td>
-          <td>46.9%</td>
-          <td>0.009192</td>
-          <td>-14.87</td>
-          <td>7.35e-49</td>
-        </tr>
-        <tr>
-          <td>Veterans</td>
-          <td>10.1%</td>
-          <td>6.1%</td>
-          <td>0.005664</td>
-          <td>6.98</td>
-          <td>2.03e-11</td>
-        </tr>
-        <tr>
-          <td>Hispanic</td>
-          <td>11.2%</td>
-          <td>17.8%</td>
-          <td>0.006302</td>
-          <td>-10.51</td>
-          <td>8.58e-25</td>
-        </tr>
-        <tr>
-          <td>Disabled</td>
-          <td>16.1%</td>
-          <td>8.4%</td>
-          <td>0.006876</td>
-          <td>11.17</td>
-          <td>6.71e-28</td>
-        </tr>
-        <tr>
-          <td>Food Shortage (Last Year)</td>
-          <td>8.7%</td>
-          <td>2.3%</td>
-          <td>0.005158</td>
-          <td>12.41</td>
-          <td>2.93e-34</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>We aim to examine the proportion of smokers within specific subgroups by constructing 95% confidence intervals (z* = 1.96) for the following variables: Veteran status, Disability, Food Shortages, and Hispanic Origin. Divorce rates produced very controversial results and will be addressed in greater detail in the findings section. The code used to compute CI below:</p>
     <figure class="code-chunk">
-      <figcaption><strong>Code Chunk: 95% Confidence Interval Calculations</strong></figcaption>
+      <figcaption><strong>Code Chunk: 95% Confidence Interval Calculations for Single Proportion (DISAB3_A - Smoking)</strong></figcaption>
       <pre><code>
       # Filter Hispanic individuals from the smoking population
       dummy_group1 &lt;- chi_smoker %&gt;%
-        filter(HISP_A %in% c(1))
+        filter(DISAB3_A %in% c(1))
 
       # Proportion of Hispanic origin among smokers
       p_dummy_group1 &lt;- nrow(dummy_group1) / nrow(chi_smoker)
@@ -333,6 +255,77 @@
       c(CHI_CI_low, CHI_CI_high)
       </code></pre>
     </figure>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+  </section>
+
+  <section id="visualization2">
+    <h2>3.2.2 Theoretical Statistics</h2>
+    <p>Hypothesis, additonaly to one in example, were the following:</p>
+    <p>Divorce:</p>
+    <p>H<sub>0</sub>: P<sub>SmokingDivorce</sub> = P<sub>NSmokingDivroce</sub></p>
+    <p>H<sub>a</sub>: P<sub>SmokingDivorce</sub> ≠ P<sub>NSmokingDivroce</sub></p>
+    <p>Veterans:</p>
+    <p>H<sub>0</sub>: P<sub>SmokingVeterans</sub> = P<sub>NSmokingVeterans</sub></p>
+    <p>H<sub>a</sub>: P<sub>SmokingVeterans</sub> ≠ P<sub>NSmokingVeterans</sub></p>
+    <p>Hispanic:</p>
+    <p>H<sub>0</sub>: P<sub>SmokingHispanic</sub> = P<sub>NSmokingHisapnic</sub></p>
+    <p>H<sub>a</sub>: P<sub>SmokingHispanic</sub> ≠ P<sub>NSmokingHispanic</sub></p>
+    <p>Food Lasting:</p>
+    <p>H<sub>0</sub>: P<sub>SmokingFoodLast</sub> = P<sub>NSmokingFoodLast</sub></p>
+    <p>H<sub>a</sub>: P<sub>SmokingFoodLast</sub> ≠ P<sub>NSmokingFoodLast</sub></p>
+    <p> Results of our analysis are provided in the table below:</p>
+    <table border="1" cellspacing="0" cellpadding="8">
+      <caption><strong>Null hypothesis tests in porportions of Smokers to Non-Smokers</strong></caption>
+      <thead>
+        <tr>
+          <th>Group</th>
+          <th>p̂ (Smokers)</th>
+          <th>p̂ (Non-Smokers)</th>
+          <th>Standard Error (SE)</th>
+          <th>Z-Score</th>
+          <th>p-value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Veterans</td>
+          <td>10.1%</td>
+          <td>6.1%</td>
+          <td>0.004839</td>
+          <td>8.18</td>
+          <td>2.43e-15</td>
+        </tr>
+        <tr>
+          <td>Hispanic</td>
+          <td>11.2%</td>
+          <td>17.8%</td>
+          <td>0.007233</td>
+          <td>-9.15</td>
+          <td>5.15e-19</td>
+        </tr>
+        <tr>
+          <td>Disabled</td>
+          <td>16.1%</td>
+          <td>8.4%</td>
+          <td>0.005680</td>
+          <td>13.52</td>
+          <td>1.68e-40</td>
+        </tr>
+        <tr>
+          <td>Food Shortage (Last Year)</td>
+          <td>8.7%</td>
+          <td>2.3%</td>
+          <td>0.003431</td>
+          <td>18.65</td>
+          <td>2.28e-76</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>All nulls got rejected, implying that smoking affects those groups disproportionatly, unexpected results are yielded by Hispanic group. Now we aim to examine the proportion of smokers within specific subgroups by constructing 95% confidence intervals (z* = 1.96) for the following variables: Veteran status, Disability, Food Shortages, and Hispanic Origin. Divorce rates produced very controversial results and will be addressed in greater detail in the findings section. The code used to compute CI below:</p>
+    
     <table border="1" cellspacing="0" cellpadding="8">
       <caption><strong>95% Confidence Intervals for Proportion of Smokers in Key Subgroups</strong></caption>
       <thead>
