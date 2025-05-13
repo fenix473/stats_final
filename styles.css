@@ -1,125 +1,114 @@
 /* === Import Fonts === */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&family=Playfair+Display:wght@600&display=swap');
 
 /* === Global Layout === */
 body {
-    font-family: 'Nunito', sans-serif;
-    background: #fdf6ec url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-    color: #444;
+    font-family: 'Work Sans', sans-serif;
+    background: #fcfbf7 url('https://www.transparenttextures.com/patterns/notebook.png');
+    color: #2e2e2e;
     margin: 0 auto;
-    max-width: 960px;
-    padding: 30px 20px;
-    line-height: 1.8;
+    max-width: 880px;
+    padding: 40px 25px;
+    line-height: 1.85;
+    font-size: 17px;
 }
 
 /* === Typography === */
 h1, h2, h3 {
-    font-family: 'Fredoka One', cursive;
-    color: #ff6f61;
-    border-bottom: 2px dashed #ffc145;
-    padding-bottom: 6px;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    text-align: left;
-}
-
-p {
-    font-size: 1.1em;
-    margin: 1.2em auto;
-    color: #444;
-    text-indent: 1.5em;
-    max-width: 800px;
-}
-
-ul {
-    font-size: 1.1em;
-    margin: 1.5em 2em;
-    padding-left: 1.5em;
-    color: #444;
-}
-
-li {
+    font-family: 'Playfair Display', serif;
+    color: #374785;
+    border-bottom: 2px solid #a8dadc;
+    padding-bottom: 4px;
+    margin-top: 2.2em;
     margin-bottom: 0.6em;
 }
 
-ul ul {
-    list-style-type: circle;
-    margin-top: 0.3em;
+p {
+    margin: 1.4em auto;
+    max-width: 750px;
+    text-indent: 1.2em;
+    color: #2e2e2e;
+}
+
+ul, ol {
+    margin: 1.5em 2em;
     padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.7em;
 }
 
 /* === Navigation === */
 nav {
-    background-color: #fff5f2;
-    border: 2px dashed #ffc145;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+    background-color: #f1f6f9;
+    border-left: 5px solid #a8dadc;
+    padding: 24px;
+    border-radius: 10px;
     margin-bottom: 2em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 nav h2 {
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin-top: 0;
-    color: #ff9f1c;
+    color: #577590;
+    font-weight: 600;
 }
 
 nav ul {
     padding-left: 20px;
-    list-style: disc;
 }
 
 nav a {
-    color: #6a4c93;
+    color: #1d3557;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 nav a:hover {
-    color: #ff595e;
+    color: #e76f51;
     text-decoration: underline;
 }
 
 /* === Sections === */
 section {
-    background-color: #fffdf7;
-    border-left: 6px solid #f8a5c2;
+    background-color: #ffffff;
+    border-left: 5px solid #f4a261;
     margin-top: 40px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 /* === Quotes === */
 .quote {
     font-style: italic;
     font-size: 1.1em;
-    color: #5c4b87;
-    background: none;
-    padding: 1.4em 2em;
-    margin: 2em auto;
-    border-left: 4px solid #c3aeea;
-    border-radius: 10px;
-    line-height: 1.9;
+    color: #264653;
+    padding: 1.6em 2em;
+    margin: 2.5em auto;
+    border-left: 5px solid #2a9d8f;
+    border-radius: 6px;
+    line-height: 2;
     text-align: center;
-    box-shadow: none;
     word-wrap: break-word;
     max-width: 700px;
     width: 90%;
-    white-space: normal;
+    background: #f0f7f4;
 }
 
 .citation {
     display: block;
-    margin-top: 0.5em;
+    margin-top: 0.6em;
     font-size: 0.95em;
-    color: #a084ca;
+    color: #6c757d;
 }
 
 /* === Images & SVGs === */
 img, svg {
     display: block;
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     margin: 2em auto;
     border-radius: 6px;
@@ -129,50 +118,49 @@ img, svg {
 
 /* === Code Blocks === */
 .code-chunk {
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    padding: 1em;
-    margin: 2em auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    max-width: 95%;
+    background-color: #f8f9fa;
+    border-left: 4px solid #457b9d;
+    padding: 1.2em 1.5em;
+    margin: 2.5em auto;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    line-height: 1.6;
+    max-width: 92%;
     overflow-x: auto;
 }
 
 .code-chunk figcaption {
-    background-color: #2d2d2d;
+    background-color: #1d3557;
     color: #fff;
     padding: 0.5em 1em;
-    font-size: 1em;
+    font-size: 0.95em;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    font-weight: 500;
 }
 
 .code-chunk code {
     display: block;
     white-space: pre;
-    color: #333;
+    color: #2e2e2e;
 }
 
 /* === Responsive Enhancements === */
 @media (max-width: 768px) {
     body {
-        padding: 20px 10px;
+        padding: 20px 15px;
     }
     h1, h2, h3 {
         text-align: center;
     }
     nav, section {
-        padding: 20px 15px;
+        padding: 20px 18px;
     }
     .quote {
-        padding: 1.2em;
+        padding: 1.2em 1em;
         font-size: 1em;
-        line-height: 1.8;
     }
     p, ul, .code-chunk {
         font-size: 1em;
-        padding: 0 1em;
-    }
-}
+        padding: 0 0.5em;
